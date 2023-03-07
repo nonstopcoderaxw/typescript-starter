@@ -1,0 +1,19 @@
+{
+  "name": "typescript-starter",
+  "version": "1.0.0",
+  "description": "a typescript starter project",
+  "author": "axw",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "@types/node": "^18.14.6",
+    "ts-node": "^10.9.1",
+    "nodemon": "^2.0.21",
+    "rimraf": "^4.3.1"
+  },
+  "scripts": {
+    "start:dev": "npx nodemon",
+    "build": "rimraf ./build && tsc", 
+    "start": "yarn build && node build/index.js" 
+  }
+}
