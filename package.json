@@ -7,13 +7,19 @@
   "devDependencies": {
     "typescript": "^4.9.5",
     "@types/node": "^18.14.6",
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
     "ts-node": "^10.9.1",
     "nodemon": "^2.0.21",
-    "rimraf": "^4.3.1"
+    "rimraf": "^4.3.1",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7"
   },
   "scripts": {
     "start:dev": "npx nodemon",
     "build": "rimraf ./build && tsc", 
-    "start": "yarn build && node build/index.js" 
+    "start": "yarn build && node build/index.js",
+    "run:dev": "ts-node",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --require ts-node/register test/*.ts"
   }
 }
