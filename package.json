@@ -10,6 +10,7 @@
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
     "ts-node": "^10.9.1",
+    "ts-mocha": "^10.0.0",
     "nodemon": "^2.0.21",
     "rimraf": "^4.3.1",
     "mocha": "^10.2.0",
@@ -17,9 +18,10 @@
   },
   "scripts": {
     "start:dev": "npx nodemon",
-    "build": "rimraf ./build && tsc", 
+    "rebuild": "rimraf ./build && tsc --project tsconfig.build.json", 
+    "build": "tsc --project tsconfig.build.json", 
     "start": "yarn build && node build/index.js",
-    "run:dev": "ts-node",
-    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --require ts-node/register test/*.ts"
+    "run-script": "ts-node",
+    "test": "ts-mocha test/*.ts"
   }
 }
